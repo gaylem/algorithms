@@ -26,6 +26,8 @@ Constraints:
  * @param {number[]} nums
  * @return {boolean}
  */
+
+ // O(n log n) time complexity, O(1) space complexity
 const containsDuplicate = function (nums) {
   nums.sort((a, b) => a - b);
   console.log(nums);
@@ -35,6 +37,7 @@ const containsDuplicate = function (nums) {
   return false;
 };
 
+// O(n) time and space complexity
 const setSolution = function (nums) {
   let testSet = new Set(nums);
   return testSet.size !== nums.length;
