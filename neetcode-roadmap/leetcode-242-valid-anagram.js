@@ -1,53 +1,4 @@
-//** Leetcode 217 - Contains Duplicate - Easy -------------------------------------------// 
-
-// https://leetcode.com/problems/contains-duplicate/description/ 
-
-/* Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct.
-
-Example 1:
-
-Input: nums = [1,2,3,1]
-Output: true
-Example 2:
-
-Input: nums = [1,2,3,4]
-Output: false
-Example 3:
-
-Input: nums = [1,1,1,3,3,4,3,2,4,2]
-Output: true
- 
-Constraints:
-
-1 <= nums.length <= 105
--109 <= nums[i] <= 109
-*/
-
-/**
- * @param {number[]} nums
- * @return {boolean}
- */
-
-// O(n log n) time complexity, O(1) space complexity
-const containsDuplicate = function (nums) {
-  nums.sort((a, b) => a - b);
-  console.log(nums);
-  for (let i = 0; i < nums.length; i++) {
-    if (nums[i] === nums[i + 1]) return true;
-  }
-  return false;
-};
-
-// O(n) time and space complexity
-const setSolution = function (nums) {
-  let testSet = new Set(nums);
-  return testSet.size !== nums.length;
-};
-
-nums = [1, 2, 3, 1];
-console.log(containsDuplicate(nums));
-
-//** Leetcode 242 - Valid Anagram - Easy -------------------------------------------// 
+//** Leetcode 242 - Valid Anagram - Easy 
 
 // https://leetcode.com/problems/valid-anagram/description/
 
@@ -56,7 +7,6 @@ console.log(containsDuplicate(nums));
 An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.
 
  
-
 Example 1:
 
 Input: s = "anagram", t = "nagaram"
@@ -109,7 +59,6 @@ const t = 'nagaram';
 console.log(isAnagram(s, t));
 
 // Alternative O(s + t) time complexity and O(s) space complexity solution
-
 var isAnagramAlt = function (s, t) {
   if (s.length !== t.length) return false;
 
@@ -135,7 +84,6 @@ var isAnagramAlt = function (s, t) {
 };
 
 // Sorting and comparing the strings would be O(s log s + t log t) time complexity and O(s + t) space complexity
-
 const isAnagramSorted = function (s, t) {
   const sSorted = s.split('').sort().join('');
   const tSorted = t.split('').sort().join('');
@@ -146,7 +94,6 @@ const isAnagramSorted = function (s, t) {
 console.log(isAnagramSorted(s, t));
 
 // For unicode characters:
-
 var isAnagramUnicode = function (s, t) {
   if (s.length !== t.length) return false;
 
@@ -170,3 +117,6 @@ var isAnagramUnicode = function (s, t) {
 
   return true;
 };
+
+//! Mistakes I made
+// Messed up bracket notation and confused myself
