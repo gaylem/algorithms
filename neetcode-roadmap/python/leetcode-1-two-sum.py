@@ -36,7 +36,7 @@ Follow-up: Can you come up with an algorithm that is less than O(n2) time comple
 
 """
 
-# O(n) time and space complexity
+#* O(n) time and space complexity
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         prevMap = {}  # val -> index

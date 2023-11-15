@@ -1,5 +1,7 @@
 //* Leetcode 49 - Group Anagrams - Easy
 
+// https://leetcode.com/problems/group-anagrams/
+
 /* Given an array of strings strs, group the anagrams together. You can return the answer in any order.
 
 An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.
@@ -46,15 +48,12 @@ var groupAnagramsBetter = function (strs) {
 
   for (const str of strs) {
     const charCount = Array(26).fill(0);
-    console.log(charCount);
 
     for (const char of str) {
       const charIndex = char.charCodeAt(0) - 'a'.charCodeAt(0);
-      console.log(charIndex);
       charCount[charIndex]++;
     }
     const key = charCount.join('');
-    console.log(key);
     if (!anagramGroups[key]) {
       anagramGroups[key] = [];
     }
